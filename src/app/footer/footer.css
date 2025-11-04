@@ -1,0 +1,11 @@
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    min-width: 900px;
+}
+
+footer p {
+    font-family: "Caveat", cursive;
+    font-weight: 100;
+}

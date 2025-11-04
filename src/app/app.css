@@ -1,0 +1,11 @@
+.app-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.dark-mode {
+  background-color: #1d2022;
+  color: #ffffff;
+}

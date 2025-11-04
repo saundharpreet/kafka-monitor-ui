@@ -1,0 +1,13 @@
+<header>
+  <div class="title">
+    <img src="{{isDarkMode ? '/assets/kafka-dark.png' : '/assets/kafka-light.svg'}}" alt="Kafka" class="logo">
+    <h2>Kafka Monitor UI</h2>
+  </div>
+  <div class="menu">
+    <button class="button {{isDarkMode ? 'dark-mode' : ''}}">Add Topic</button>
+    <button class="button {{isDarkMode ? 'dark-mode' : ''}} round">
+      <img src="{{isDarkMode ? '/assets/dark.svg' : '/assets/light.svg'}}" alt="Mode" (click)="onToggleDarkMode()">
+    </button>
+  </div>
+</header>
+<app-add-topic></app-add-topic>
