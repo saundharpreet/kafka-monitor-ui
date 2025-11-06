@@ -6,80 +6,163 @@
         </section>
         <section class="topics">
             <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">raw-transaction-event</p>
-                <p class="consumer-group">raw-transaction-event-fcg1</p>
+                <div class="title">
+                    <p class="topic">raw-transaction-event</p>
+                    <p class="consumer-group">raw-transaction-event-fcg1</p>
+                </div>
+                <div class="status">
+                    @if (isEditMode()) {
+                    <button class="{{isDarkMode() ? 'dark-mode' : ''}} button icon" (click)="openEditModeModal()">
+                        <img src="{{isDarkMode() ? '/assets/edit-dark.svg' : '/assets/edit-light.svg'}}" alt="">
+                    </button>
+                    }
+                    <button class="{{isDarkMode() ? 'dark-mode' : ''}} button icon">
+                        <img src="{{statusSource}}" alt="">
+                    </button>
+                </div>
             </div>
+
             <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">processed-transaction-event</p>
-                <p class="consumer-group">processed-transaction-event-fcg2</p>
+                <div class="title">
+                    <p class="topic">processed-transaction-event</p>
+                    <p class="consumer-group">processed-transaction-event-fcg2</p>
+                </div>
+                <div class="status">
+                    <button class="{{isDarkMode() ? 'dark-mode' : ''}} button icon">
+                        <img src="{{statusSource}}" alt="">
+
+                    </button>
+                </div>
             </div>
+
             <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">account-activity-event</p>
-                <p class="consumer-group">account-activity-event-fcg3</p>
+                <div class="title">
+                    <p class="topic">account-activity-event</p>
+                    <p class="consumer-group">account-activity-event-fcg3</p>
+                </div>
+                <div class="status">
+                    <button class="{{isDarkMode() ? 'dark-mode' : ''}} button icon">
+                        <img src="{{statusSource}}" alt="">
+
+                    </button>
+                </div>
             </div>
+
             <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">fraud-detection-event</p>
-                <p class="consumer-group">fraud-detection-event-fcg4</p>
+                <div class="title">
+                    <p class="topic">fraud-alert-event</p>
+                    <p class="consumer-group">fraud-alert-event-fcg4</p>
+                </div>
+                <div class="status">
+                    <button class="{{isDarkMode() ? 'dark-mode' : ''}} button icon">
+                        <img src="{{statusSource}}" alt="">
+
+                    </button>
+                </div>
             </div>
+
             <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">payment-status-event</p>
-                <p class="consumer-group">payment-status-event-fcg5</p>
+                <div class="title">
+                    <p class="topic">payment-status-event</p>
+                    <p class="consumer-group">payment-status-event-fcg5</p>
+                </div>
+                <div class="status">
+                    <button class="{{isDarkMode() ? 'dark-mode' : ''}} button icon">
+                        <img src="{{statusSource}}" alt="">
+
+                    </button>
+                </div>
             </div>
+
             <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">refund-transaction-event</p>
-                <p class="consumer-group">refund-transaction-event-fcg6</p>
+                <div class="title">
+                    <p class="topic">refund-transaction-event</p>
+                    <p class="consumer-group">refund-transaction-event-fcg6</p>
+                </div>
+                <div class="status">
+                    <button class="{{isDarkMode() ? 'dark-mode' : ''}} button icon">
+                        <img src="{{statusSource}}" alt="">
+
+                    </button>
+                </div>
             </div>
+
             <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">account-balance-event</p>
-                <p class="consumer-group">account-balance-event-fcg7</p>
+                <div class="title">
+                    <p class="topic">statement-generation-event</p>
+                    <p class="consumer-group">statement-generation-event-fcg7</p>
+                </div>
+                <div class="status">
+                    <button class="{{isDarkMode() ? 'dark-mode' : ''}} button icon">
+                        <img src="{{statusSource}}" alt="">
+
+                    </button>
+                </div>
             </div>
+
             <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">statement-generation-event</p>
-                <p class="consumer-group">statement-generation-event-fcg8</p>
+                <div class="title">
+                    <p class="topic">customer-profile-update-event</p>
+                    <p class="consumer-group">customer-profile-update-event-fcg8</p>
+                </div>
+                <div class="status">
+                    <button class="{{isDarkMode() ? 'dark-mode' : ''}} button icon">
+                        <img src="{{statusSource}}" alt="">
+
+                    </button>
+                </div>
             </div>
+
             <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">customer-profile-update-event</p>
-                <p class="consumer-group">customer-profile-update-event-fcg9</p>
+                <div class="title">
+                    <p class="topic">kyc-verification-event</p>
+                    <p class="consumer-group">kyc-verification-event-fcg9</p>
+                </div>
+                <div class="status">
+                    <button class="{{isDarkMode() ? 'dark-mode' : ''}} button icon">
+                        <img src="{{statusSource}}" alt="">
+
+                    </button>
+                </div>
             </div>
+
             <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">kyc-verification-event</p>
-                <p class="consumer-group">kyc-verification-event-fcg10</p>
-            </div>
-            <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">loan-application-event</p>
-                <p class="consumer-group">loan-application-event-fcg11</p>
-            </div>
-            <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">credit-score-event</p>
-                <p class="consumer-group">credit-score-event-fcg12</p>
-            </div>
-            <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">investment-portfolio-event</p>
-                <p class="consumer-group">investment-portfolio-event-fcg13</p>
-            </div>
-            <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">currency-exchange-event</p>
-                <p class="consumer-group">currency-exchange-event-fcg14</p>
-            </div>
-            <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">transaction-retry-event</p>
-                <p class="consumer-group">transaction-retry-event-fcg15</p>
-            </div>
-            <div class="{{isDarkMode() ? 'dark-mode' : ''}} topic-card">
-                <p class="topic">dead-letter-event</p>
-                <p class="consumer-group">dead-letter-event-fcg16</p>
+                <div class="title">
+                    <p class="topic">dead-letter-event</p>
+                    <p class="consumer-group">dead-letter-event-fcg10</p>
+                </div>
+                <div class="status">
+                    <button class="{{isDarkMode() ? 'dark-mode' : ''}} button icon">
+                        <img src="{{statusSource}}" alt="">
+                    </button>
+                </div>
             </div>
         </section>
     </div>
     <section class="topic-data">
         <section class="metadata">
-            <button class="button small">Headers</button>
             <p class="partition">Partition: 1</p>
             <p class="offset">Offset: 10234</p>
             <p class="timestamp">Timestamp: 2024-06-10 14:23:45</p>
+            <button class="{{isDarkMode() ? 'dark-mode' : ''}} button small">Headers</button>
+
+            <div class="navigation">
+                <button class="{{isDarkMode() ? 'dark-mode' : ''}} button small amber">
+                    <img src="{{isDarkMode() ? '/assets/refresh-light.svg' : '/assets/refresh-light.svg'}}" alt="">
+                </button>
+                <button class="{{isDarkMode() ? 'dark-mode' : ''}} button small">
+                    <img src="{{isDarkMode() ? '/assets/back-dark.svg' : '/assets/back-light.svg'}}" alt="">
+                </button>
+                <p>100/100</p>
+                <button class="{{isDarkMode() ? 'dark-mode' : ''}} button small">
+                    <img src="{{isDarkMode() ? '/assets/next-dark.svg' : '/assets/next-light.svg'}}" alt="">
+                </button>
+            </div>
         </section>
         <section class="message-content">
-            <pre>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum odio corporis in reiciendis dolorem quisquam quaerat dignissimos enim necessitatibus amet reprehenderit fugiat eius distinctio atque id assumenda minima veniam at nobis beatae adipisci ab sint, voluptate similique. Eum natus beatae doloribus nulla ullam sit iusto commodi illum laudantium, magni fugiat.</pre>
+            <pre>{{ formattedJson }}</pre>
         </section>
     </section>
 </main>
+<app-edit-topic [isDarkMode]="isDarkMode()" [isModalOpen]="editModeModalOpen"
+    (closeModal)="closeEditModeModal()"></app-edit-topic>

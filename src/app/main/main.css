@@ -27,10 +27,15 @@ main {
 }
 
 .topic-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
     border-bottom: 1px solid #dddddd00;
     padding: 15px;
     background-color: #fff;
     transition: all 250ms;
+    margin-right: 10px;
 }
 
 .topic-card .topic {
@@ -75,7 +80,7 @@ main {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
     font-weight: 600;
@@ -89,7 +94,7 @@ main {
 .topic-data .message-content {
     max-width: 68.9vw;
     min-width: 600px;
-    height: calc(100vh - 217px);
+    height: calc(100vh - 220px);
     padding: 10px 0;
     font-size: 16px;
     overflow-x: scroll;
@@ -97,4 +102,31 @@ main {
 
 .topic-data .message-content pre {
     font-family: 'Courier New', Courier, monospace;
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.navigation button {
+    padding: 6.5px;
+}
+
+.navigation button>img {
+    width: 20px;
+    height: 20px;
+}
+
+.status {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+.status .button {
+    padding: 1px;
 }

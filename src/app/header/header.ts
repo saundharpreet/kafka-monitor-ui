@@ -1,5 +1,6 @@
-import { Component, OnInit, output } from '@angular/core';
+import { Component, OnInit, output, signal } from '@angular/core';
 import { AddTopic } from "../add-topic/add-topic";
+import { single } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,11 @@ export class Header implements OnInit {
   isDarkMode: boolean = false;
   darkModeSignal = output<boolean>();
 
+  isAddModalOpen: boolean = false;
+
+  isEditMode: boolean = false;
+  isEditModeSignal = output<boolean>();
+
   ngOnInit(): void {
     const savedMode = localStorage.getItem('darkMode');
     this.isDarkMode = savedMode === 'true';
@@ -21,5 +27,18 @@ export class Header implements OnInit {
     this.isDarkMode = !this.isDarkMode;
     this.darkModeSignal.emit(this.isDarkMode);
     localStorage.setItem('darkMode', this.isDarkMode ? 'true' : 'false');
+  }
+
+  openAddModal() {
+    this.isAddModalOpen = true;
+  }
+
+  closeAddModal() {
+    this.isAddModalOpen = false;
+  }
+
+  toggleEditMode() {
+    this.isEditMode = !this.isEditMode;
+    this.isEditModeSignal.emit(this.isEditMode);
   }
 }

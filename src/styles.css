@@ -28,6 +28,7 @@ body {
     color: rgba(0, 0, 0, 0.85);
     cursor: pointer;
     display: inline-flex;
+    gap: 8px;
     font-size: 14px;
     font-weight: 600;
     justify-content: center;
@@ -83,6 +84,33 @@ body {
 .button.dark-mode:active {
     border-color: #ffffff;
     background-color: #1d2022;
+}
+
+.button.amber {
+    background-color: #ffbf00;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #000000;
+}
+
+.button.blue {
+    background-color: #007bff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.button.red {
+    background-color: #e72f2f;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.button.icon {
+    padding: 6.5px;
+}
+
+.button.icon>img {
+    width: 20px;
+    height: 20px;
 }
 
 input[type="text"] {

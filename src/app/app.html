@@ -1,5 +1,5 @@
 <div class="{{ isDarkMode ? 'dark-mode' : '' }} app-content">
-    <app-header (darkModeSignal)="onDarkModeChange($event)"></app-header>
-    <app-main [isDarkMode]="isDarkMode"></app-main>
+    <app-header (darkModeSignal)="onDarkModeChange($event)" (isEditModeSignal)="onEditModeChange($event)"></app-header>
+    <app-main [isDarkMode]="isDarkMode" [isEditMode]="isEditMode"></app-main>
     <app-footer></app-footer>
 </div>

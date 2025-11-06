@@ -6,6 +6,6 @@
 }
 
 .dark-mode {
-  background-color: #1d2022;
-  color: #ffffff;
+  background-color: #1d2022 !important;
+  color: #ffffff !important;
 }

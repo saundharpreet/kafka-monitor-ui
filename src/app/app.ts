@@ -14,8 +14,13 @@ export class App {
   protected readonly title = signal('kafka-monitor-ui');
 
   isDarkMode = false;
+  isEditMode = false;
 
   onDarkModeChange(event: boolean) {
     this.isDarkMode = event;
+  }
+
+  onEditModeChange(event: boolean) {
+    this.isEditMode = event;
   }
 }
