@@ -1,68 +1,68 @@
 .modal-box {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
 }
 
 .modal-box.show {
-    display: flex;
+  display: flex;
 }
 
 .add-modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    padding: 30px 30px 50px 30px;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 30px 30px 50px 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
 }
 
 .add-modal.dark-mode {
-    background-color: #2c2f31;
-    color: #ffffff;
+  background-color: #2c2f31;
+  color: #ffffff;
 }
 
-.add-modal>* {
-    width: 100%;
+.add-modal > * {
+  width: 100%;
 }
 
 .add-modal .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 button img {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .add-modal form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .form-group input {
-    margin-top: 5px;
-    font-size: 16px;
+  margin-top: 5px;
+  font-size: 16px;
 }
 
 .submit {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
 }

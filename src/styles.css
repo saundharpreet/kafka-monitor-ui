@@ -2,137 +2,137 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@400..700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 body {
-    height: 100vh;
-    max-width: 100%;
-    min-width: 900px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  height: 100vh;
+  max-width: 100%;
+  min-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .button {
-    align-items: center;
-    background-color: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-    box-sizing: border-box;
-    color: rgba(0, 0, 0, 0.85);
-    cursor: pointer;
-    display: inline-flex;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    justify-content: center;
-    margin: 0;
-    padding: 10px 15px;
-    position: relative;
-    text-decoration: none;
-    transition: all 250ms;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    width: auto;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: center;
+  margin: 0;
+  padding: 10px 15px;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
 }
 
 .button:hover,
 .button:focus {
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-    color: rgba(0, 0, 0, 0.65);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
 }
 
 .button:hover {
-    transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 .button:active {
-    background-color: #F0F0F1;
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-    color: rgba(0, 0, 0, 0.65);
-    transform: translateY(0);
+  background-color: #f0f0f1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
 }
 
 .button.round {
-    border-radius: 9999px;
-    padding: 10px;
+  border-radius: 9999px;
+  padding: 10px;
 }
 
 .button.small {
-    font-size: 14px;
-    padding: 8px 10px;
-    margin: 0;
+  font-size: 14px;
+  padding: 8px 10px;
+  margin: 0;
 }
 
 .button.dark-mode {
-    background-color: #1d2022;
-    border: 1px solid #555;
-    color: #ffffff;
+  background-color: #1d2022;
+  border: 1px solid #555;
+  color: #ffffff;
 }
 
 .button.dark-mode:hover,
 .button.dark-mode:active {
-    border-color: #ffffff;
-    background-color: #1d2022;
+  border-color: #ffffff;
+  background-color: #1d2022;
 }
 
 .button.amber {
-    background-color: #ffbf00;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #000000;
+  background-color: #ffbf00;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #000000;
 }
 
 .button.blue {
-    background-color: #007bff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #fff;
+  background-color: #007bff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
 .button.red {
-    background-color: #e72f2f;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #fff;
+  background-color: #e72f2f;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
 .button.icon {
-    padding: 6.5px;
+  padding: 6.5px;
 }
 
-.button.icon>img {
-    width: 20px;
-    height: 20px;
+.button.icon > img {
+  width: 20px;
+  height: 20px;
 }
 
-input[type="text"] {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    width: 100%;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
+input[type='text'] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
 }
 
-input[type="text"].dark-mode {
-    background-color: #1d2022;
-    color: #ffffff;
-    border: 1px solid #555;
+input[type='text'].dark-mode {
+  background-color: #1d2022;
+  color: #ffffff;
+  border: 1px solid #555;
 }
 
-input[type="text"]:focus {
-    border-color: #007bff;
-    outline: none;
+input[type='text']:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
-input[type="text"].dark-mode:focus {
-    background-color: #121212;
+input[type='text'].dark-mode:focus {
+  background-color: #121212;
 }

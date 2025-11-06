@@ -1,5 +1,5 @@
 import { Component, effect, input, OnInit } from '@angular/core';
-import { EditTopic } from "../edit-topic/edit-topic";
+import { EditTopic } from '../edit-topic/edit-topic';
 
 @Component({
   selector: 'app-main',
@@ -13,7 +13,7 @@ export class Main implements OnInit {
 
   editModeModalOpen: boolean = false;
 
-  statusSource = "/assets/check-light.svg";
+  statusSource = '/assets/check-light.svg';
 
   constructor() {
     effect(() => {

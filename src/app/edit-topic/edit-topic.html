@@ -1,29 +1,46 @@
-<div class="modal-box {{isModalOpen() ? 'show' : ''}}">
-    <div class="add-modal {{isDarkMode() ? 'dark-mode' : ''}}">
-        <div class="header">
-            <h3>Edit Topic</h3>
-            <button class="button icon {{isDarkMode() ? 'dark-mode' : ''}}" (click)="closeEditModal()">
-                <img src="{{isDarkMode() ? '/assets/close-dark.svg' : '/assets/close-light.svg'}}" alt="Close">
-            </button>
-        </div>
-        <br>
-        <form>
-            <div class="form-group">
-                <label for="topicName">Topic Name:</label>
-                <input type="text" id="topicName" name="topicName" required class="{{isDarkMode() ? 'dark-mode' : ''}}"
-                    disabled />
-            </div>
-            <div class="form-group">
-                <label for="consumerGroup">Consumer Group:</label>
-                <input type="text" id="consumerGroup" name="consumerGroup" required
-                    class="{{isDarkMode() ? 'dark-mode' : ''}}" disabled />
-            </div>
-            <div class="submit">
-                <button class="button blue" type="submit">Save</button>
-                <button class="button amber" type="submit">Restart</button>
-                <button class="button red" type="submit">Stop</button>
-                <button class="button {{isDarkMode() ? 'dark-mode' : ''}}" (click)="closeEditModal()">Cancel</button>
-            </div>
-        </form>
+<div class="modal-box {{ isModalOpen() ? 'show' : '' }}">
+  <div class="add-modal {{ isDarkMode() ? 'dark-mode' : '' }}">
+    <div class="header">
+      <h3>Edit Topic</h3>
+      <button class="button icon {{ isDarkMode() ? 'dark-mode' : '' }}" (click)="closeEditModal()">
+        <img
+          src="{{ isDarkMode() ? '/assets/close-dark.svg' : '/assets/close-light.svg' }}"
+          alt="Close"
+        />
+      </button>
     </div>
+    <br />
+    <form>
+      <div class="form-group">
+        <label for="topicName">Topic Name:</label>
+        <input
+          type="text"
+          id="topicName"
+          name="topicName"
+          required
+          class="{{ isDarkMode() ? 'dark-mode' : '' }}"
+          disabled
+        />
+      </div>
+      <div class="form-group">
+        <label for="consumerGroup">Consumer Group:</label>
+        <input
+          type="text"
+          id="consumerGroup"
+          name="consumerGroup"
+          required
+          class="{{ isDarkMode() ? 'dark-mode' : '' }}"
+          disabled
+        />
+      </div>
+      <div class="submit">
+        <button class="button blue" type="submit">Save</button>
+        <button class="button amber" type="submit">Restart</button>
+        <button class="button red" type="submit">Stop</button>
+        <button class="button {{ isDarkMode() ? 'dark-mode' : '' }}" (click)="closeEditModal()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

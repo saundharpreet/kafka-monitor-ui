@@ -12,7 +12,6 @@ export class AddTopic {
 
   isDarkMode = input.required<boolean>();
 
-
   closeAddModal() {
     this.closeModal.emit(false);
   }

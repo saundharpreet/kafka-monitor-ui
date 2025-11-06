@@ -1,5 +1,5 @@
 import { Component, OnInit, output, signal } from '@angular/core';
-import { AddTopic } from "../add-topic/add-topic";
+import { AddTopic } from '../add-topic/add-topic';
 import { single } from 'rxjs';
 
 @Component({

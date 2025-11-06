@@ -1,132 +1,132 @@
 main {
-    padding: 20px 50px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 20px;
-    height: calc(100vh - 135px);
-    width: 100%;
+  padding: 20px 50px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  height: calc(100vh - 135px);
+  width: 100%;
 }
 
 .topics-box {
-    border-right: 1px solid #ccc;
-    padding-right: 15px;
+  border-right: 1px solid #ccc;
+  padding-right: 15px;
 }
 
 .topics-box .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .topics {
-    height: calc(100vh - 225px);
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+  height: calc(100vh - 225px);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .topic-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    border-bottom: 1px solid #dddddd00;
-    padding: 15px;
-    background-color: #fff;
-    transition: all 250ms;
-    margin-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1px solid #dddddd00;
+  padding: 15px;
+  background-color: #fff;
+  transition: all 250ms;
+  margin-right: 10px;
 }
 
 .topic-card .topic {
-    font-weight: 600;
-    font-size: 14px;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .topic-card .consumer-group {
-    color: #007bff;
-    font-size: small;
-    padding-top: 5px;
+  color: #007bff;
+  font-size: small;
+  padding-top: 5px;
 }
 
 .topic-card:hover {
-    background-color: #f9f9f9;
-    border-color: #ccc;
-    cursor: pointer;
+  background-color: #f9f9f9;
+  border-color: #ccc;
+  cursor: pointer;
 }
 
 .topic-card:active,
 .topic-card.active {
-    background-color: #e9ecef;
-    border-color: #007bff;
+  background-color: #e9ecef;
+  border-color: #007bff;
 }
 
 .topic-card.dark-mode {
-    background-color: #1d2022;
-    color: #ffffff;
+  background-color: #1d2022;
+  color: #ffffff;
 }
 
 .topic-card.dark-mode:hover {
-    background-color: #121212;
-    color: #ffffff;
+  background-color: #121212;
+  color: #ffffff;
 }
 
 .topic-card.dark-mode:active {
-    background-color: #121212;
-    color: #ffffff;
+  background-color: #121212;
+  color: #ffffff;
 }
 
 .topic-data .metadata {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-    font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  font-weight: 600;
 }
 
 .topic-data .metadata p {
-    font-size: 14px;
-    font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .topic-data .message-content {
-    max-width: 68.9vw;
-    min-width: 600px;
-    height: calc(100vh - 220px);
-    padding: 10px 0;
-    font-size: 16px;
-    overflow-x: scroll;
+  max-width: 68.9vw;
+  min-width: 600px;
+  height: calc(100vh - 220px);
+  padding: 10px 0;
+  font-size: 16px;
+  overflow-x: scroll;
 }
 
 .topic-data .message-content pre {
-    font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .navigation {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
 }
 
 .navigation button {
-    padding: 6.5px;
+  padding: 6.5px;
 }
 
-.navigation button>img {
-    width: 20px;
-    height: 20px;
+.navigation button > img {
+  width: 20px;
+  height: 20px;
 }
 
 .status {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
 }
 
 .status .button {
-    padding: 1px;
+  padding: 1px;
 }

@@ -1,20 +1,38 @@
 <header>
   <div class="title">
-    <img src="{{isDarkMode ? '/assets/kafka-dark.svg' : '/assets/kafka-light.svg'}}" alt="Kafka" class="logo">
+    <img
+      src="{{ isDarkMode ? '/assets/kafka-dark.svg' : '/assets/kafka-light.svg' }}"
+      alt="Kafka"
+      class="logo"
+    />
     <h2>Kafka Monitor UI</h2>
   </div>
   <div class="menu">
-    <button class="button {{isDarkMode ? 'dark-mode' : ''}}" (click)="openAddModal()">
-      <img src="{{isDarkMode ? '/assets/add-dark.svg' : '/assets/add-light.svg'}}" alt="">
+    <button class="button {{ isDarkMode ? 'dark-mode' : '' }}" (click)="openAddModal()">
+      <img src="{{ isDarkMode ? '/assets/add-dark.svg' : '/assets/add-light.svg' }}" alt="" />
       <p>Add Topic</p>
     </button>
-    <button class="{{isDarkMode ? 'dark-mode' : ''}} button {{isEditMode ? 'red' : ''}}" (click)="toggleEditMode()">
-      <img src="{{isDarkMode || isEditMode ? '/assets/edit-dark.svg' : '/assets/edit-light.svg'}}" alt="">
-      <p>{{isEditMode ? 'Cancel Edit' : 'Edit Topics'}}</p>
+    <button
+      class="{{ isDarkMode ? 'dark-mode' : '' }} button {{ isEditMode ? 'red' : '' }}"
+      (click)="toggleEditMode()"
+    >
+      <img
+        src="{{ isDarkMode || isEditMode ? '/assets/edit-dark.svg' : '/assets/edit-light.svg' }}"
+        alt=""
+      />
+      <p>{{ isEditMode ? 'Cancel Edit' : 'Edit Topics' }}</p>
     </button>
-    <button class="button {{isDarkMode ? 'dark-mode' : ''}} round">
-      <img src="{{isDarkMode ? '/assets/dark.svg' : '/assets/light.svg'}}" alt="Mode" (click)="onToggleDarkMode()">
+    <button class="button {{ isDarkMode ? 'dark-mode' : '' }} round">
+      <img
+        src="{{ isDarkMode ? '/assets/dark.svg' : '/assets/light.svg' }}"
+        alt="Mode"
+        (click)="onToggleDarkMode()"
+      />
     </button>
   </div>
 </header>
-<app-add-topic [isDarkMode]="isDarkMode" [isModalOpen]="isAddModalOpen" (closeModal)="closeAddModal()"></app-add-topic>
+<app-add-topic
+  [isDarkMode]="isDarkMode"
+  [isModalOpen]="isAddModalOpen"
+  (closeModal)="closeAddModal()"
+></app-add-topic>
