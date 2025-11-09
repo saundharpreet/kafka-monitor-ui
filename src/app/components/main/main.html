@@ -41,48 +41,57 @@
     </section>
   </div>
   <section class="topic-data">
-    <section class="metadata">
-      <p class="partition">Partition: {{ topicData?.partition }}</p>
-      <p class="offset">Offset: {{ topicData?.offset }}</p>
-      <p class="timestamp">Timestamp: {{ topicData?.timestamp! | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
-      <button class="{{ isDarkMode() ? 'dark-mode' : '' }} button small">Headers</button>
-
-      <div class="navigation">
-        <button class="{{ isDarkMode() ? 'dark-mode' : '' }} button small amber">
-          <img
-            src="{{ isDarkMode() ? '/assets/refresh-light.svg' : '/assets/refresh-light.svg' }}"
-            alt=""
-          />
+    @if (topicData) {
+      <section class="metadata">
+        <p class="partition">Partition: {{ topicData.partition }}</p>
+        <p class="offset">Offset: {{ topicData.offset }}</p>
+        <p class="timestamp">Timestamp: {{ topicData.timestamp! | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
+        <button class="{{ isDarkMode() ? 'dark-mode' : '' }} button small" (click)="showHeaders()">
+          Headers
         </button>
-        <button
-          class="{{ isDarkMode() ? 'dark-mode' : '' }} button small {{
-            noPreviousIndex ? 'red' : ''
-          }}"
-          (click)="previousIndex()"
-        >
-          <img
-            src="{{
-              isDarkMode() || noPreviousIndex ? '/assets/back-dark.svg' : '/assets/back-light.svg'
+        <div class="navigation">
+          <button class="{{ isDarkMode() ? 'dark-mode' : '' }} button small amber">
+            <img
+              src="{{ isDarkMode() ? '/assets/refresh-light.svg' : '/assets/refresh-light.svg' }}"
+              alt=""
+            />
+          </button>
+          <button
+            class="{{ isDarkMode() ? 'dark-mode' : '' }} button small {{
+              noPreviousIndex ? 'red' : ''
             }}"
-            alt=""
-          />
-        </button>
-        <p>{{ selectedTopicIndex + 1 }} / {{ topicDataList?.length! + 1 }}</p>
-        <button
-          class="{{ isDarkMode() ? 'dark-mode' : '' }} button small {{ noNextIndex ? 'red' : '' }}"
-          (click)="nextIndex()"
-        >
-          <img
-            src="{{
-              isDarkMode() || noNextIndex ? '/assets/next-dark.svg' : '/assets/next-light.svg'
+            (click)="previousIndex()"
+          >
+            <img
+              src="{{
+                isDarkMode() || noPreviousIndex ? '/assets/back-dark.svg' : '/assets/back-light.svg'
+              }}"
+              alt=""
+            />
+          </button>
+          <p>{{ topicDataIndex + 1 }} / {{ topicDataList?.length }}</p>
+          <button
+            class="{{ isDarkMode() ? 'dark-mode' : '' }} button small {{
+              noNextIndex ? 'red' : ''
             }}"
-            alt=""
-          />
-        </button>
-      </div>
-    </section>
+            (click)="nextIndex()"
+          >
+            <img
+              src="{{
+                isDarkMode() || noNextIndex ? '/assets/next-dark.svg' : '/assets/next-light.svg'
+              }}"
+              alt=""
+            />
+          </button>
+        </div>
+      </section>
+    }
     <section class="message-content">
-      <pre>{{ topicData?.payload! | formatJson }}</pre>
+      @if (topicData) {
+        <pre>{{ topicData.payload! | formatJson }}</pre>
+      } @else {
+        <pre>No data yet.</pre>
+      }
     </section>
   </section>
 </main>

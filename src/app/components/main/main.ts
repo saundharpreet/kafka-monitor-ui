@@ -96,6 +96,11 @@ export class Main implements OnInit {
     }
   }
 
+  showHeaders() {
+    const messageHeaders = this.topicData?.headers;
+    alert(JSON.stringify(messageHeaders));
+  }
+
   openEditModeModal() {
     this.editModeModalOpen = true;
   }
