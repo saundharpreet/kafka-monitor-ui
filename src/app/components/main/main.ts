@@ -25,6 +25,8 @@ export class Main implements OnInit {
   topicDataList: TopicDataEntity[] | null = null;
   topicData: TopicDataEntity | null = null;
 
+  refreshedTopicDataList: TopicDataEntity[] | null = null;
+
   selectedTopicIndex: number = 0;
   topicDataIndex: number = 0;
 
@@ -39,6 +41,7 @@ export class Main implements OnInit {
 
   ngOnInit() {
     this.loadTopics();
+    setInterval(() => this.refreshTopicData(), 10000);
   }
 
   loadTopics() {
@@ -69,6 +72,38 @@ export class Main implements OnInit {
         console.error('Error fetching topic data:', error);
       },
     });
+  }
+
+  refreshTopicData() {
+    this.kafkaMonitorApiService
+      .getTopicData(this.topicEntities[this.selectedTopicIndex].topicName!)
+      .subscribe({
+        next: (data) => {
+          if (this.topicDataList) {
+            const currentLastRecord = this.topicDataList[this.topicDataList.length - 1];
+            const newLastRecord = data[data.length - 1];
+
+            if (
+              currentLastRecord.timestamp == newLastRecord.timestamp ||
+              currentLastRecord.payload == newLastRecord.payload
+            ) {
+              this.refreshedTopicDataList = null;
+            } else {
+              this.refreshedTopicDataList = data;
+            }
+          }
+        },
+        error: (error) => {
+          console.error('Error refreshing topic data:', error);
+        },
+      });
+  }
+
+  onRefreshDataClick() {
+    this.topicDataList = this.refreshedTopicDataList;
+    this.topicDataIndex = this.refreshedTopicDataList!.length - 1;
+    this.topicData = this.topicDataList![this.topicDataIndex];
+    this.refreshedTopicDataList = null;
   }
 
   selectTopic(index: number) {

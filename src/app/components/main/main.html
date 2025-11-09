@@ -50,12 +50,17 @@
           Headers
         </button>
         <div class="navigation">
-          <button class="{{ isDarkMode() ? 'dark-mode' : '' }} button small amber">
-            <img
-              src="{{ isDarkMode() ? '/assets/refresh-light.svg' : '/assets/refresh-light.svg' }}"
-              alt=""
-            />
-          </button>
+          @if (refreshedTopicDataList) {
+            <button
+              class="{{ isDarkMode() ? 'dark-mode' : '' }} button small amber"
+              (click)="onRefreshDataClick()"
+            >
+              <img
+                src="{{ isDarkMode() ? '/assets/refresh-light.svg' : '/assets/refresh-light.svg' }}"
+                alt=""
+              />
+            </button>
+          }
           <button
             class="{{ isDarkMode() ? 'dark-mode' : '' }} button small {{
               noPreviousIndex ? 'red' : ''

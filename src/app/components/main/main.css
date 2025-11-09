@@ -27,6 +27,8 @@ main {
 }
 
 .topic-card {
+  position: relative;
+  /* important for ::after positioning */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,6 +38,8 @@ main {
   background-color: #fff;
   transition: all 250ms;
   margin-right: 10px;
+  overflow: hidden;
+  /* prevents ::after overflow */
 }
 
 .topic-card .topic {
@@ -58,7 +62,32 @@ main {
 .topic-card:active,
 .topic-card.selected {
   background-color: #e9ecef;
-  border-color: #007bff;
+  border-color: transparent;
+  /* hide normal border */
+}
+
+/* ✅ Animated bottom progress bar */
+.topic-card.selected::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, #00fff0, #00b3ff, #7f00ff);
+  background-size: 200% 100%;
+  animation: topicProgress 2s linear infinite;
+  border-radius: 2px;
+}
+
+@keyframes topicProgress {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 .topic-card.dark-mode {
@@ -71,7 +100,6 @@ main {
   color: #ffffff;
 }
 
-.topic-card.dark-mode:active,
 .topic-card.dark-mode.selected {
   background-color: #121212;
   color: #ffffff;
