@@ -56,7 +56,7 @@ main {
 }
 
 .topic-card:active,
-.topic-card.active {
+.topic-card.selected {
   background-color: #e9ecef;
   border-color: #007bff;
 }
@@ -71,7 +71,8 @@ main {
   color: #ffffff;
 }
 
-.topic-card.dark-mode:active {
+.topic-card.dark-mode:active,
+.topic-card.dark-mode.selected {
   background-color: #121212;
   color: #ffffff;
 }

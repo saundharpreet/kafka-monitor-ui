@@ -1,0 +1,93 @@
+<main>
+  <div class="topics-box">
+    <section class="header">
+      <h3>Topics</h3>
+      <input
+        class="{{ isDarkMode() ? 'dark-mode' : '' }}"
+        type="text"
+        placeholder="Search topics..."
+      />
+    </section>
+    <section class="topics">
+      @for (topic of topicEntities; track $index) {
+        <div
+          class="{{ isDarkMode() ? 'dark-mode' : '' }} topic-card {{
+            selectedTopicIndex == $index ? 'selected' : ''
+          }}"
+          (click)="selectTopic($index)"
+        >
+          <div class="title">
+            <p class="topic">{{ topic.topicName }}</p>
+            <p class="consumer-group">{{ topic.consumerGroup }}</p>
+          </div>
+          <div class="status">
+            @if (isEditMode()) {
+              <button
+                class="{{ isDarkMode() ? 'dark-mode' : '' }} button icon"
+                (click)="openEditModeModal()"
+              >
+                <img
+                  src="{{ isDarkMode() ? '/assets/edit-dark.svg' : '/assets/edit-light.svg' }}"
+                  alt=""
+                />
+              </button>
+            }
+            <button class="{{ isDarkMode() ? 'dark-mode' : '' }} button icon">
+              <img src="{{ statusSource }}" alt="" />
+            </button>
+          </div>
+        </div>
+      }
+    </section>
+  </div>
+  <section class="topic-data">
+    <section class="metadata">
+      <p class="partition">Partition: {{ topicData?.partition }}</p>
+      <p class="offset">Offset: {{ topicData?.offset }}</p>
+      <p class="timestamp">Timestamp: {{ topicData?.timestamp! | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
+      <button class="{{ isDarkMode() ? 'dark-mode' : '' }} button small">Headers</button>
+
+      <div class="navigation">
+        <button class="{{ isDarkMode() ? 'dark-mode' : '' }} button small amber">
+          <img
+            src="{{ isDarkMode() ? '/assets/refresh-light.svg' : '/assets/refresh-light.svg' }}"
+            alt=""
+          />
+        </button>
+        <button
+          class="{{ isDarkMode() ? 'dark-mode' : '' }} button small {{
+            noPreviousIndex ? 'red' : ''
+          }}"
+          (click)="previousIndex()"
+        >
+          <img
+            src="{{
+              isDarkMode() || noPreviousIndex ? '/assets/back-dark.svg' : '/assets/back-light.svg'
+            }}"
+            alt=""
+          />
+        </button>
+        <p>{{ selectedTopicIndex + 1 }} / {{ topicDataList?.length! + 1 }}</p>
+        <button
+          class="{{ isDarkMode() ? 'dark-mode' : '' }} button small {{ noNextIndex ? 'red' : '' }}"
+          (click)="nextIndex()"
+        >
+          <img
+            src="{{
+              isDarkMode() || noNextIndex ? '/assets/next-dark.svg' : '/assets/next-light.svg'
+            }}"
+            alt=""
+          />
+        </button>
+      </div>
+    </section>
+    <section class="message-content">
+      <pre>{{ topicData?.payload! | formatJson }}</pre>
+    </section>
+  </section>
+</main>
+<app-edit-topic
+  [isDarkMode]="isDarkMode()"
+  [isModalOpen]="editModeModalOpen"
+  (closeModal)="closeEditModeModal()"
+></app-edit-topic>

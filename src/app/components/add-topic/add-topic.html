@@ -33,7 +33,9 @@
       </div>
       <div class="submit">
         <button class="button blue" type="submit">Add Topic</button>
-        <button class="button red" (click)="closeAddModal()">Cancel</button>
+        <button class="button {{ isDarkMode() ? 'dark-mode' : '' }}" (click)="closeAddModal()">
+          Cancel
+        </button>
       </div>
     </form>
   </div>

@@ -98,7 +98,8 @@ body {
   color: #fff;
 }
 
-.button.red {
+.button.red,
+.button.red:hover {
   background-color: #e72f2f;
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: #fff;
