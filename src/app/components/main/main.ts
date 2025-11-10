@@ -48,7 +48,19 @@ export class Main implements OnInit {
     this.kafkaMonitorApiService.getAllTopics().subscribe({
       next: (topics) => {
         this.topicEntities = topics;
-        this.selectTopic(this.selectedTopicIndex);
+
+        const currentSelectedTopic = localStorage.getItem('selectedTopic');
+        let currentSelectedTopicIndex = 0;
+
+        if (currentSelectedTopic) {
+          this.topicEntities.forEach((entity, index) => {
+            if (entity.topicName == currentSelectedTopic) {
+              currentSelectedTopicIndex = index;
+            }
+          });
+        }
+
+        this.selectTopic(currentSelectedTopicIndex);
       },
       error: (error) => {
         console.error('Error fetching topics:', error);
@@ -108,6 +120,7 @@ export class Main implements OnInit {
 
   selectTopic(index: number) {
     this.selectedTopicIndex = index;
+    localStorage.setItem('selectedTopic', this.topicEntities[index].topicName!);
     this.loadTopicData();
   }
 
